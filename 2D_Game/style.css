@@ -1,83 +1,251 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|ZCOOL+QingKe+HuangYou');
 
 * {
-    margin: 0;
-    padding: 0;
-    color: #000;
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
-    box-sizing: border-box;
+	margin:0;
+	padding:0;
+	color:#000;
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
+	box-sizing: border-box;
 }
 
 .fn-font {
-    font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 ul {
-    list-style: none;
+	list-style: none;
 }
 
 a {
-    text-decoration: none;
-    outline: none;
+	text-decoration: none;
+	outline: none;
 }
 
 .container {
-    width: 100%;
-    margin: 0 auto;
+	width:1440px;
+	margin:0 auto;
 }
 
 header {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	width:100%;
+	height:80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 header > h2 {
-    margin-left: 20px;
+	margin-left:20px;
 }
 
 header > nav {
-    width: 600px;
-    height: 100%;
+	width:600px;
+	height:100%;
 }
 
 header ul {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
+	width:100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
 header ul > li {
-    font-size: 20px;
-    height: 100%;
-    display: flex;
-    align-items: center;
+	font-size:20px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#visual {
+	background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(./resource/visual.png);
+	background-size: cover;
+	background-position: 0% 20%;
+	width:100%;
+	height:600px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 #visual * {
-    color: white;
+	color:white;
 }
 
 #visual h2 {
-    font-size: 60px;
+	font-size:60px;
 }
 
 #visual p {
-    margin: 30px 0;
+	margin: 30px 0;
 }
 
-.btn {
-    width: 120px;
-    padding: 8px 12px;
-    border: 3px solid #ddd;
-    background-color: #70aa96;
-    border-radius: 4px;
+.btn {	
+	width:120px;
+	padding: 8px 12px;
+	border:3px solid #ddd;
+	background-color: #70aa96;
+	border-radius: 4px;
 }
 
 .btn:hover {
-    background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2));
+	background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
 }
 
+#content {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 40px;
+    background: url(./resource/content.png);
+    width: 1440px;
+    height: 500px;
+    background-position: 420px 0;
+    background-repeat: no-repeat;
+
+}
+
+#content > .item {
+	width:30%;
+}
+
+.img {
+	width: 100%;
+	height: 250px;
+}
+
+.img > img {
+	width: 100%;
+	height:100%;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0;
+}
+
+.item .info {
+	background: #fff;
+	padding: 20px;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button-row {
+	width: 100%;
+	text-align: right;
+}
+
+.btn-sm {
+	padding: 8px 12px;
+	font-size:12px;
+	color:white;
+	width:auto;
+	border:2px solid #ddd;
+}
+
+.info > h4 {
+	font-size:30px;
+	color:rgba(0,0,0,0.9);
+}
+.info > p {
+	color:#555;
+}
+
+/* 히어로 섹션 */
+#hero {
+	display:flex;
+    margin-top: 50px;
+}
+
+#hero > .photo {
+	flex:3;
+	min-height: 300px;
+	background-image: url(./resource/section2.jpg);
+	background-size: cover;
+	background-position: 0px -70px;
+}
+
+#hero > .text {
+	flex:2;
+	padding: 20px;
+	background-color: #70aa96;
+}
+
+.text * {
+	color : #fff;
+}
+
+.text > h1 {
+	margin-top: 30px;
+	font-size:40px;
+}
+
+.text > p {
+	margin-top: 20px;
+}
+
+
+/* 서포트 섹션 */
+#support {
+	min-height: 700px;
+	background-image: url(./resource/content.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+}
+
+#support > div {
+	flex:1;
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 120px 60px;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#support .info-slot {
+	width:80%;
+	min-height: 100px;
+	display: flex;
+}
+
+.info-slot i{
+	font-size:60px;
+	color:#555;
+}
+
+.info-slot > .icon-div {
+	flex:1;
+}
+.info-slot > .text-div {
+	padding-left: 10px;
+	flex:4;
+}
+
+#support > div:last-child {
+	align-items: flex-end;
+}
+
+/* 푸터 */
+footer {
+	margin-top: 20px;
+	width:100%;
+	background-color: #222021;
+	height:140px;
+}
+
+footer * {
+	color:white;
+}
+
+footer h2 {
+	font-size:40px;
+	padding-left: 30px;
+	padding-top: 20px;
+}
+
+footer p {
+	text-align:right;
+	line-height: 1.8;
+	font-size:20px;
+	padding-right: 10px;
+}
