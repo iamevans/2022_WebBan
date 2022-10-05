@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout1+menu1+tab</title>
+    <style>
+        * {margin: 0;padding: 0;font-size: 24px; color: #fff;}
+        a {color: #333; text-decoration: none;}
+        li {list-style: none;}
+        table {border-spacing: 0;}
+        .clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+
+        #wrap {width: 1200px; margin: 0px auto;}
+        
+        #header {text-align: center; background: #6A2C70;}
+        #header .logo {float: left; width: 250px; height: 100px; line-height: 100px; background: #B83B5E;}
+        #header .nav  {float: right; width: 600px; margin-top: 28px; background: #F08A5D;}
+        #header .nav li {position: relative; float: left; width: 25%; text-align: center;}
+        #header .nav li a {padding: 10px;display: block;font-size: 20px; color: #F9ED69;  }
+        #header .nav li a:hover{background: rgba(0,0,0,0.4);}
+        #header .nav li ul.submenu {display: none; position: absolute; left: 0; top: 44px; background: #DF7861;}
+        #header .nav li ul.submenu li {width: 100%; border-right: 0;}
+        #header .nav li ul.submenu a:hover{background: rgba(0,0,0,0.4);}
+
+        #banner {text-align: center;height: 400px;line-height: 400px;background: #C86B85;}
+
+        #contents {text-align: center;}
+        #contents > div {float: left; width: 33.3333%; }
+        #contents > .cont1{background: #E6A4B4; height: 247px; }
+        #contents > .cont2{background: #F3D7CA; height: 247px; line-height: 247px;}
+        #contents > .cont3{background: #F5EEE6; height: 247px; line-height: 247px;}
+
+        .tab-menu{padding: 10px;}
+        .tab-menu .tab-btn ul {overflow: hidden;}
+        .tab-menu .tab-btn li {float: left; width: 160px; text-align: center; margin-right: -1px; background: #98DDCA;}
+        .tab-menu .tab-btn li.active {text-decoration: underline;}
+        .tab-menu .tab-btn li a {padding: 10px; display: block; color: #fff;}
+        .tab-menu .tab-cont {padding: 20px; text-align: left; background: #FF9F29;}
+
+        #footer {height: 100px; line-height: 100px; text-align: center;}
+        #footer .foot1 {float: left; width: 200px; background: #FFE8DF;}
+        #footer .foot2 {float: left; width: 800px; background: #62D2A2;}
+        #footer .foot3 {float: left; width: 200px; background: #888888;}
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header" class="clearfix">
+            <h1 class="logo">logo</h1>
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="">MENU-1</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">MENU-2</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">MENU-3</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">MENU-4</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="banner">
+            <h2>image_slide</h2>
+        </section>
+
+        <section id="contents" class="clearfix">
+            <div class="cont1">
+                <div class="tab-menu">
+                    <div class="tab-btn">
+                        <ul>
+                            <li class="active"><a href="#">notice1</a></li>
+                            <li><a href="#">notice2</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-cont">
+                        <div>
+                            1. Tab Menu DESC<br>1. Tab Menu DESC<br>1. Tab Menu DESC
+                        </div>
+                        <div>
+                            2. Tab Menu DESC<br>2. Tab Menu DESC<br>2. Tab Menu DESC
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cont2">
+                <h3>gallery</h3>
+            </div>
+            <div class="cont3">
+                <h3>popup</h3>
+            </div>
+        </section>
+
+        <footer id="footer" class="clearfix">
+            <div class="foot1">
+                <h3>logo</h3>
+            </div>
+            <div class="foot2">
+                <h3>Copyright</h3>
+            </div>
+            <div class="foot3">
+                <h3>SNS</h3>
+            </div>
+        </footer>
+
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".nav > ul > li").mouseover(function() {
+            $(this).find(".submenu").stop().slideDown(200);
+        });
+        $(".nav > ul > li").mouseout(function() {
+            $(this).find(".submenu").stop().slideUp(200);
+        });
+    </script>
+    <script>
+            $(document).ready(function() {
+                var tabBtn = $(".tab-btn > ul > li");
+                var tabCont = $(".tab-cont > div");
+    
+                tabCont.hide().eq(0).show();
+    
+                tabBtn.click(function(e) {
+                    e.preventDefault();
+                    var target = $(this);
+                    var index = target.index();
+                    tabBtn.removeClass("active");
+                    target.addClass("active");
+                    tabCont.css("display", "none");
+                    tabCont.eq(index).css("display", "block");
+                });
+            });
+    </script>
+
+</body>
+</html>

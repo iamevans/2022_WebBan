@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout2+menu2</title>
+    <style>
+        * {margin: 0; padding: 0; font-size: 20px; color: white}
+        a {color: #333; text-decoration: none;}
+        li {list-style: none;}
+        table {border-spacing: 0;}
+        .clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+
+        #wrap {width: 1200px; margin: 0 auto;}
+        #side {float: left; width: 300px;}
+        #content {float: left; width: 900px;}
+
+        #side {text-align: center;}
+        #side .logo{width: 300px; height: 150px; line-height: 150px; background: #E9D5CA;}
+        #side .nav{width: 300px; height: 700px; background: #827397;}
+        #side .nav li {position: relative; background: #A760FF;}
+        #side .nav li a {padding: 10px; display: block; color: white;}
+        #side .nav li a:hover {background: rgba(0,0,0,0.4);}
+        #side .nav li ul.submenu {display: none; position: absolute ; right:-200px ; top:0; width: 200px; background: #CA82FF;}
+        #side .nav li ul.submenu a:hover {background: rgba(0,0,0,0.2);}
+
+
+        #banner {width: 900px; text-align: center; height: 450px;line-height: 450px; background: #4D4C7D;}
+
+        #contents {width: 900px; text-align: center;}
+        #contents > div {float: left; width: 33.3333%; height: 300px;line-height: 300px;}
+        #contents > div.cont1 {background: #363062;}
+        #contents > div.cont2 {background: #4C3575;}
+        #contents > div.cont3 {background: #5B4B8A;}
+
+        #footer {width: 900px; text-align: center;}
+        #footer .foot1 {float: left; width: 200px; height: 100px; line-height: 100px; background: #590696;}
+        #footer .foot2 {float: left; width: 700px; height: 50px; line-height: 50px; background: #C70A80;}
+        #footer .foot3 {float: left; width: 700px; height: 50px; line-height: 50px; background: #FBCB0A;}
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <aside id="side">
+            <h1 class="logo">logo</h1>
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="">MENU1</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">MENU2</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">MENU3</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">MENU4</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section id="content">
+            <section id="banner">
+                <h2>image_slide</h2>
+            </section>
+
+            <section id="contents" class="clearfix">
+                <div class="cont1">
+                    <h3>notice</h3>
+                </div>
+                <div class="cont2">
+                    <h3>gallery</h3>
+                </div>
+                <div class="cont3">
+                    <h3>popup</h3>
+                </div>
+            </section>
+
+            <footer id="footer">
+                <div class="foot1">
+                    <h3>logo</h3>
+                </div>
+                <div class="foot2">
+                    <h3>menu2</h3>
+                </div>
+                <div class="foot3">
+                    <h3>Copyright</h3>
+                </div>
+            </footer>
+
+
+
+        </section>
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".nav > ul > li").hover(
+            function(){
+                $(this).find(".submenu").stop().slideDown();
+            },function(){
+                $(this).find(".submenu").stop().slideUp();
+        });
+    </script>
+</body>
+</html>

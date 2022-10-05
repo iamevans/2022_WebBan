@@ -1,0 +1,122 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+table {
+    border-spacing: 0;
+}
+
+.clearfix::before, .clearfix::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#side {
+    float: left;
+    width: 300px;
+}
+
+#content {
+    float: left;
+    width: 900px;
+}
+
+/* asdie */
+#side {
+    text-align: center;
+}
+
+#side .logo {
+    width: 300px;
+    height: 150px;
+    line-height: 150px;
+    background: #377D71;
+}
+
+#side .nav {
+    width: 300px;
+    height: 700px;
+    line-height: 700px;
+    background: #FBC5C5;
+}
+
+#banner {
+    width: 900px;
+    text-align: center;
+    height: 450px;
+    line-height: 450px;
+    background: #FBA1A1;
+}
+
+#contents {
+    width: 900px;
+}
+
+#contents > div {
+    float: left;
+    width: 33.3333%;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+}
+
+#contents > div.cont1 {
+    background: #2C3639;
+}
+#contents > div.cont2 {
+    background: #3F4E4F;
+}
+#contents > div.cont3 {
+    background: #A27B5C;
+}
+
+/* footer */
+#footer {
+    width: 900px; text-align: center;
+}
+
+#footer .foot1 {
+    float: left;
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    background: #610C63;
+}
+#footer .foot2 {
+    float: left;
+    width: 700px;
+    height: 50px;
+    line-height: 50px;
+    background: #810955;
+}
+#footer .foot3{
+    float: left;
+    width: 700px;
+    height: 50px;
+    line-height: 50px;
+    background: #EE81B3;
+}
+
+
+
+

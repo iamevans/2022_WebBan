@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout2+menu2</title>
+    <style>
+        /* reset */
+        * {margin: 0; padding: 0; font-size: 20px; color: #fff;}
+        a {color: #333; text-decoration: none;}
+        li {list-style: none;}
+        table {border-spacing: 0;}
+        .clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+
+        #wrap {width: 1200px; margin: 0 auto;}
+        #side {float: left; width: 300px;}
+        #content {float: left; width: 900px;}
+
+        /* side */
+        #side {text-align: center;}
+        #side .logo {width: 300px; height: 150px; line-height: 150px; background: #333;}
+        #side .nav {width: 300px; height: 700px; background: #666;}
+        #side .nav li {text-align: center;background: #777;}
+        #side .nav li a {padding: 10px;display: block; color: #fff; background: rgba(0,0,0,0.3);}
+        #side .nav li a:hover {background: rgba(0,0,0,0.4);}
+        #side .nav li ul.submenu {display: none;}
+        #side .nav li ul.submenu a:hover {background: rgba(0,0,0,0.2);}
+
+        /* banner */
+        #banner {width: 900px; text-align: center; height: 450px;line-height: 450px; background: #777;}
+        
+        /* contents */
+        #contents {width: 900px; text-align: center;}
+        #contents > div {float: left; width: 33.3333%; height: 300px;line-height: 300px;}
+        #contents > div.cont1 {background: #888;}
+        #contents > div.cont2 {background: #999;}
+        #contents > div.cont3 {background: #aaa;}
+
+        /* footer */
+        #footer {width: 900px; text-align: center;}
+        #footer .foot1{float: left; width: 200px; height: 100px;line-height: 100px;background: #555;}
+        #footer .foot2{float: left; width: 700px; height: 50px;line-height: 50px;background: #666;}
+        #footer .foot3{float: left; width: 700px; height: 50px;line-height: 50px;background: #777;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <aside id="side">
+            <h1 class="logo">logo</h1>
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="">MENU-1</a>
+                        <ul class="submenu">
+                            <li><a href="">Submenu-1</a></li>
+                            <li><a href="">Submenu-2</a></li>
+                            <li><a href="">Submenu-3</a></li>
+                            <li><a href="">Submenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">MENU-2</a>
+                        <ul class="submenu">
+                            <li><a href="">Submenu-1</a></li>
+                            <li><a href="">Submenu-2</a></li>
+                            <li><a href="">Submenu-3</a></li>
+                            <li><a href="">Submenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">MENU-3</a>
+                        <ul class="submenu">
+                            <li><a href="">Submenu-1</a></li>
+                            <li><a href="">Submenu-2</a></li>
+                            <li><a href="">Submenu-3</a></li>
+                            <li><a href="">Submenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">MENU-4</a>
+                        <ul class="submenu">
+                            <li><a href="">Submenu-1</a></li>
+                            <li><a href="">Submenu-2</a></li>
+                            <li><a href="">Submenu-3</a></li>
+                            <li><a href="">Submenu-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- aside -->
+
+        <section id="content">
+        <!-- section #content -->
+            <section id="banner">
+                <h2>image_slide</h2>
+            </section>
+            <!-- banner -->
+
+            <section id="contents" class="clearfix">
+                <div class="cont1">
+                    <h3>notice</h3>
+                </div>
+                <div class="cont2">
+                    <h3>gallery</h3>
+                </div>
+                <div class="cont3">
+                    <h3>popup</h3>
+                </div>
+            </section>
+            <!-- contents -->
+
+            <footer id="footer" class="clearfix">
+                <div class="foot1">
+                    <h3>logo</h3>
+                </div>
+                <div class="foot2">
+                    <h3>menu2</h3>
+                </div>
+                <div class="foot3">
+                    <h3>Copyright</h3>
+                </div>
+            </footer>
+            <!-- footer -->
+        </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".nav > ul > li").hover(
+            function(){
+                $(this).find(".submenu").stop().slideDown();
+            },function(){
+                $(this).find(".submenu").stop().slideUp();
+        });
+    </script>
+</body>
+</html>
