@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button onclick="getAjaxFile('1.html');">page 1</button>
+        <button onclick="getAjaxFile('2.html');">page 2</button>
+        <button onclick="getAjaxFile('3.html');">page 3</button>
+    </div>
+    <div id="content">
+        <h1>index.html</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae porro voluptate amet quae alias! Hic ut
+            facere magnam officiis? Eum repellendus tempora incidunt tempore quam at doloremque nihil unde accusamus.
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        function getAjaxFile(file) {
+            var xhr = new XMLHttpRequest(); //XMLHttpRequest() 인스턴스 xhr 생성
+            xhr.onreadystatechange=function() {
+                if (xhr.readyState==4 && xhr.status==200) {
+                    document.getElementById('content').innerHTML=xhr.responseText;
+                }
+            };
+            xhr.open("Get", file, true); //file을 GET방식으로 열도록 준비
+            xhr.send();
+        }        
+    </script>
+
+
+</body>
+
+</html>
