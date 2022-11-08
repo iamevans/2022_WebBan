@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div>
+        <button onclick="getAjaxXML('friends.xml');">친구목록보기</button>
+    </div>
+    <div id="friend-list"></div>
+    <script type="text/javascript">
+        function getAjaxXML(xml) {
+            var xhr = new XMLHttpRequest(); //XMLHttpRequest 인스턴스 xhr 생성
+            xhr.onreadystatechange = function () { //XMLHttpRequest 요청 후 상태 변화가 생기면
+                if (xhr.readyState == 4 && xhr.status == 200) { //요청에 대한 응답이 성공하면
+
+                    //응답 결과를 XML로 해석하여 friendData에 저장
+                    var friendData = xhr.responseXML;
+
+                    //XML에서 <friend>..</friend>를 모두 추출하여 friendList에 배열로 저장  
+                    var friendList = friendData.getElementsByTagName("friend");
+                    var table = "<table border='1'><tr><th>이름</th><th>Email</th><th>연락처</th><th>나이</th></tr>";
+                    for (var i = 0; i < friendList.length; i++) {
+                        var friend = {}; //객체 friend 생성
+
+                        //name, email, phone, age 등의 객체의 값을 읽어서 객체 friend에 저장 
+                        //friendList[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                        //위 코드를 함수화 하여 getNodeValue(friendList[i],"name") 형식으로 호출하여 값 반환
+                        friend.name = getNodeValue(friendList[i], "name");
+                        friend.email = getNodeValue(friendList[i], "email");
+                        friend.phone = getNodeValue(friendList[i], "phone");
+                        friend.age = getNodeValue(friendList[i], "age");
+                        table += "<tr>";
+                        table += "<td>" + friend.name + "</td>";
+                        table += "<td>" + friend.email + "</td>";
+                        table += "<td>" + friend.phone + "</td>";
+                        table += "<td>" + friend.age + "</td>";
+                        table += "</tr>";
+                    }
+                    table += "</table>";
+                    document.getElementById("friend-list").innerHTML = table;
+                }
+            };
+            xhr.open("GET", xml, true); //xml을 GET 방식으로 열도록 준비
+            xhr.send(); //요청 전송(성공하면 onreadystatechange의 함수 실행)
+        }
+
+        function getNodeValue(nodeData, nodeName) {
+            return nodeData.getElementsByTagName(nodeName)[0].childNodes[0].nodeValue;
+        }
+    </script>
+</body>
+
+</html>
